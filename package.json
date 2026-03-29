@@ -3,6 +3,14 @@
   "version": "1.0.0",
   "description": "ScaleAtlas - Open-source planner for LLM parameters, training VRAM, and inference capacity.",
   "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cpwangnlp-520/Scaleatlas.git"
+  },
+  "bugs": {
+    "url": "https://github.com/cpwangnlp-520/Scaleatlas/issues"
+  },
+  "homepage": "https://github.com/cpwangnlp-520/Scaleatlas#readme",
   "scripts": {
     "dev": "vite",
     "test": "node --test tests/*.test.ts",
@@ -17,6 +25,8 @@
     "llm-planner",
     "gpu-sizing",
     "vram-estimator",
+    "capacity-planning",
+    "model-serving",
     "gpu",
     "training",
     "inference",

@@ -1,37 +1,50 @@
 # ScaleAtlas
 
-ScaleAtlas is an open-source planner for LLM parameters, training VRAM, and inference capacity.
+ScaleAtlas is an open-source planning tool for LLM parameters, training VRAM, and inference capacity.
+
+It is designed for teams that need a fast, explainable answer to questions such as:
+
+- How many parameters does this model actually have?
+- Will it fit on the target GPUs for training?
+- Which TP / PP / DP / EP layouts are valid?
+- How much memory and concurrency are needed for inference?
 
 Language:
 
 - English: this file
-- Chinese: [README.zh-CN.md](./README.zh-CN.md)
+- 中文: [README.zh-CN.md](./README.zh-CN.md)
 
-## Overview
+## Why ScaleAtlas
 
-ScaleAtlas helps answer practical planning questions before training or deployment:
+Most sizing workflows sit at one of two extremes:
 
-- How many parameters does this model actually have?
-- Will the model fit on the target GPUs for training?
-- Which TP / PP / DP / EP layouts are valid?
-- How much memory and concurrency are needed for inference?
+- rough spreadsheets with little architecture awareness
+- framework-internal calculators that are hard to explain and review
 
-The application includes bilingual UI support, architecture-aware estimation, and browser screenshot regression coverage.
+ScaleAtlas aims for the middle ground:
 
-## Features
+- simple enough for planning and communication
+- detailed enough to explain the result
+- visual enough to review with engineers and non-specialists together
 
-- Parameter breakdown by model module
-- Training memory and throughput estimation
-- Inference memory, concurrency, and capacity estimation
-- HuggingFace `config.json` import
+## What It Covers
+
+ScaleAtlas ships with three focused workflows:
+
+- `Parameters`
+  Inspect model structure, module-level parameter counts, and memory by precision.
+- `Training`
+  Estimate peak memory, throughput, and feasible parallel strategy.
+- `Inference`
+  Estimate deployment memory, safe concurrency, and serving parallelism.
+
+## Highlights
+
+- Architecture-aware parameter breakdown
 - Dense, MoE, and multimodal model support
-- Visual regression coverage with Playwright
-
-## Workflows
-
-- `Parameters`: inspect model structure, module-level parameter counts, and memory by precision
-- `Training`: estimate peak memory, throughput, and feasible parallel strategy
-- `Inference`: estimate deployment memory, safe concurrency, and serving parallelism
+- HuggingFace `config.json` import
+- Bilingual `ZH / EN` UI
+- Browser screenshot regression coverage with Playwright
 
 ## Quick Start
 
@@ -46,7 +59,7 @@ Install dependencies:
 npm install
 ```
 
-Start the app locally:
+Start the local app:
 
 ```bash
 npm run dev
@@ -60,7 +73,7 @@ npm run build
 
 ## Testing
 
-Run unit and logic tests:
+Run logic and unit tests:
 
 ```bash
 npm test
@@ -78,7 +91,7 @@ Update screenshot baselines:
 npm run test:e2e:update
 ```
 
-## Project Structure
+## Repository Layout
 
 ```text
 src/
@@ -96,18 +109,21 @@ e2e/                     Playwright visual regression tests
 ## Notes
 
 - `config.toml` is treated as a local machine-specific file and is ignored by git.
-- `dist/`, `test-results/`, and Playwright reports are treated as generated artifacts.
-- The repository currently maintains screenshot baselines for:
+- `dist/`, `test-results/`, and Playwright reports are generated artifacts and are ignored by git.
+- The repository maintains screenshot baselines for:
   - parameter page expanded state
   - training result state
   - inference result state
   - `ZH / EN`
   - selected responsive breakpoints
 
-## Suggested Repository Metadata
+## Suggested GitHub Metadata
 
 - Repository name: `Scaleatlas`
-- Description: `Open-source planner for LLM parameters, training VRAM, and inference capacity.`
+- Description:
+  `Open-source planner for LLM parameters, training VRAM, and inference capacity.`
+- Suggested topics:
+  `llm`, `gpu`, `vram`, `inference`, `training`, `moe`, `huggingface`, `resource-planning`, `capacity-planning`, `playwright`
 
 ## Roadmap
 
