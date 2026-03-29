@@ -46,7 +46,6 @@ ScaleAtlas ships with three focused workflows:
 - Dense, MoE, and multimodal model support
 - HuggingFace `config.json` import
 - Bilingual `ZH / EN` UI
-- Browser screenshot regression coverage with Playwright
 
 ## Quick Start
 
