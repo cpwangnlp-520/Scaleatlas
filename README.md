@@ -2,42 +2,36 @@
 
 ScaleAtlas is an open-source planner for LLM parameters, training VRAM, and inference capacity.
 
-It helps you answer questions like:
+Language:
 
-- How many parameters does this model really have?
-- Will this model fit on my GPUs for training?
-- What TP / PP / DP / EP layout is valid?
-- How much memory and concurrency do I need for inference?
+- English: this file
+- Chinese: [README.zh-CN.md](./README.zh-CN.md)
 
-The UI ships with bilingual `ZH / EN` support and visual regression coverage via Playwright.
+## Overview
 
-## What It Does
+ScaleAtlas helps answer practical planning questions before training or deployment:
 
-ScaleAtlas focuses on three workflows:
+- How many parameters does this model actually have?
+- Will the model fit on the target GPUs for training?
+- Which TP / PP / DP / EP layouts are valid?
+- How much memory and concurrency are needed for inference?
 
-- `Parameters`: inspect model structure, parameter breakdown, and memory by precision
-- `Training`: estimate memory, throughput, and feasible parallel strategy
-- `Inference`: estimate deployment memory, safe concurrency, and serving parallelism
+The application includes bilingual UI support, architecture-aware estimation, and browser screenshot regression coverage.
 
-It also supports:
+## Features
 
+- Parameter breakdown by model module
+- Training memory and throughput estimation
+- Inference memory, concurrency, and capacity estimation
 - HuggingFace `config.json` import
-- Dense, MoE, and multimodal model structures
-- Architecture-aware parameter breakdown
-- Visual screenshot baselines for key pages
+- Dense, MoE, and multimodal model support
+- Visual regression coverage with Playwright
 
-## Why It Exists
+## Workflows
 
-Most model sizing tools stop at one of two extremes:
-
-- a rough spreadsheet with little architecture awareness
-- a framework-specific internal calculator that is hard to explain
-
-ScaleAtlas aims for a middle ground:
-
-- simple enough to use as a planning tool
-- detailed enough to explain the result
-- visual enough to review with engineers and non-specialists together
+- `Parameters`: inspect model structure, module-level parameter counts, and memory by precision
+- `Training`: estimate peak memory, throughput, and feasible parallel strategy
+- `Inference`: estimate deployment memory, safe concurrency, and serving parallelism
 
 ## Quick Start
 
@@ -64,7 +58,7 @@ Build for production:
 npm run build
 ```
 
-## Test
+## Testing
 
 Run unit and logic tests:
 
@@ -90,7 +84,7 @@ npm run test:e2e:update
 src/
   content/               Copy dictionaries and copy types
   engine/                Core sizing and planning logic
-  features/parameter/    Parameter page model + rendering
+  features/parameter/    Parameter-page model and rendering
   components/            Shared UI and planner pages
   styles/                tokens / layout / planner / parameter styles
   stores/                Zustand state
@@ -102,42 +96,25 @@ e2e/                     Playwright visual regression tests
 ## Notes
 
 - `config.toml` is treated as a local machine-specific file and is ignored by git.
-- `dist/`, `test-results/`, and Playwright reports are ignored as generated artifacts.
-- Current screenshot baselines are maintained for:
-  - parameter page expanded baseline
-  - training page result baseline
-  - inference page result baseline
+- `dist/`, `test-results/`, and Playwright reports are treated as generated artifacts.
+- The repository currently maintains screenshot baselines for:
+  - parameter page expanded state
+  - training result state
+  - inference result state
+  - `ZH / EN`
+  - selected responsive breakpoints
 
-## Naming
+## Suggested Repository Metadata
 
-Product name:
-
-- `ScaleAtlas`
-
-Suggested repository name:
-
-- `scaleatlas`
-
-Suggested GitHub description:
-
-- `Open-source planner for LLM parameters, training VRAM, and inference capacity.`
+- Repository name: `Scaleatlas`
+- Description: `Open-source planner for LLM parameters, training VRAM, and inference capacity.`
 
 ## Roadmap
 
-- More architecture-aware model presets
-- Broader multimodal breakdown support
+- More architecture-aware presets
+- Broader multimodal breakdown coverage
 - CI-backed visual regression
 - Better result export and comparison workflows
-
-## 中文说明
-
-ScaleAtlas 是一个开源的大模型资源规划工具，面向：
-
-- 参数量与结构拆解
-- 训练显存与并行规划
-- 推理显存、并发和部署容量估算
-
-它不是框架级精确模拟器，而是一个可解释、可视化、适合开会和做前期资源决策的工程化估算工具。
 
 ## License
 
