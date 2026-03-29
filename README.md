@@ -14,6 +14,8 @@ Language:
 - English: this file
 - 中文: [README.zh-CN.md](./README.zh-CN.md)
 
+![ScaleAtlas Parameters Page](./assets/scaleatlas-parameters.jpeg)
+
 ## Why ScaleAtlas
 
 Most sizing workflows sit at one of two extremes:
