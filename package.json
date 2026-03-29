@@ -1,0 +1,47 @@
+{
+  "name": "scaleatlas",
+  "version": "1.0.0",
+  "description": "ScaleAtlas - Open-source planner for LLM parameters, training VRAM, and inference capacity.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "test": "node --test tests/*.test.ts",
+    "test:e2e": "npm run build && playwright test",
+    "test:e2e:update": "npm run build && playwright test --update-snapshots",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "keywords": [
+    "llm",
+    "scaleatlas",
+    "llm-planner",
+    "gpu-sizing",
+    "vram-estimator",
+    "gpu",
+    "training",
+    "inference",
+    "moe",
+    "huggingface-config"
+  ],
+  "author": "cpwangnlp-520",
+  "license": "MIT",
+  "type": "module",
+  "dependencies": {
+    "@tailwindcss/postcss": "^4.2.2",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "react-router-dom": "^7.13.2",
+    "zustand": "^5.0.12"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.58.2",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.0.1",
+    "autoprefixer": "^10.4.27",
+    "postcss": "^8.5.8",
+    "tailwindcss": "^4.2.2",
+    "typescript": "^6.0.2",
+    "vite": "^8.0.2"
+  }
+}
