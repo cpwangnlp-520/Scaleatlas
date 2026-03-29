@@ -124,7 +124,7 @@ e2e/                     Playwright visual regression tests
 - Description:
   `Open-source planner for LLM parameters, training VRAM, and inference capacity.`
 - Suggested topics:
-  `llm`, `gpu`, `vram`, `inference`, `training`, `moe`, `huggingface`, `resource-planning`, `capacity-planning`, `playwright`
+  `llm`, `gpu`, `vram`, `inference`, `training`, `moe`, `huggingface`, `resource-planning`, `capacity-planning`
 
 ## Roadmap
 
